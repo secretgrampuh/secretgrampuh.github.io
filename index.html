@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zach Lamplugh · Creative Technologist</title>
+<meta name="description" content="Zach Lamplugh: creative technologist and Pipeline Technical Director. AI pipelines, VFX and editorial pipelines, and AI creative work.">
+<meta property="og:title" content="Zach Lamplugh · Creative Technologist">
+<meta property="og:description" content="An editor who learned to code. AI pipelines, VFX pipelines and AI creative work.">
+<meta property="og:image" content="https://secretgrampuh.github.io/assets/relight_after.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root { --yellow: #F6B800; --ink: #1a1a1a; --muted: #5a5a5a; --line: #ddd; --bg: #fff; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; color: var(--ink); background: var(--bg);
+         font-size: 19px; line-height: 1.4; }
+  img { display: block; width: 100%; height: auto; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* header */
+  header { border-bottom: 3px solid var(--ink); }
+  .top { display: flex; align-items: flex-end; gap: 14px; padding: 28px 0 18px; flex-wrap: wrap; }
+  .block { width: 30px; height: 60px; background: var(--yellow); flex: none; }
+  .name { font-family: "Bebas Neue", sans-serif; font-size: clamp(44px, 8vw, 68px); line-height: .85; letter-spacing: .5px; }
+  .sub { margin-left: auto; text-align: right; font-weight: 700; font-size: 14px; letter-spacing: 3.5px; line-height: 1.6; }
+  nav { display: flex; gap: 22px; flex-wrap: wrap; padding: 0 0 12px; font-weight: 600; letter-spacing: 1.5px;
+        text-transform: uppercase; font-size: 15px; }
+  nav a { text-decoration: none; border-bottom: 3px solid transparent; }
+  nav a:hover { border-color: var(--yellow); }
+
+  /* intro */
+  .intro { padding: 44px 0 20px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+  .intro p.lead { font-size: clamp(24px, 3.2vw, 32px); line-height: 1.2; font-weight: 600; }
+  .intro p.lead mark { background: var(--yellow); padding: 0 4px; }
+  .intro p.more { margin-top: 14px; color: var(--muted); }
+  .proof { border-left: 3px solid var(--ink); padding-left: 20px; }
+  .proof div { padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .proof div:last-child { border: 0; }
+  .proof b { font-family: "Bebas Neue", sans-serif; font-size: 34px; font-weight: 400; color: var(--ink); display: block; line-height: 1; }
+  .proof span { font-size: 16px; color: var(--muted); }
+
+  /* sections */
+  section.group { padding-top: 40px; }
+  .gtitle { color: var(--yellow); font-weight: 600; font-size: 24px; letter-spacing: .5px; border-bottom: 2px solid var(--ink);
+            padding-bottom: 3px; margin-bottom: 8px; }
+  .gtitle span { color: var(--ink); }
+  .case { padding: 26px 0 34px; border-bottom: 1px solid var(--line); }
+  .case:last-child { border-bottom: 0; }
+  .case h3 { font-weight: 800; font-size: clamp(26px, 3.6vw, 34px); line-height: 1; text-transform: uppercase; letter-spacing: .3px; }
+  .case .for { color: var(--muted); margin: 4px 0 14px; }
+  .pair { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; }
+  .pair .arrow { font-weight: 800; font-size: 28px; color: var(--yellow); }
+  .shot { position: relative; background: #eee; overflow: hidden; }
+  .shot img { aspect-ratio: 3 / 2; object-fit: cover; }
+  .solo .shot img { aspect-ratio: 16 / 9; }
+  .tag { position: absolute; left: 0; bottom: 0; background: var(--ink); color: #fff; font-weight: 600; font-size: 13px;
+         letter-spacing: 1.6px; padding: 3px 8px; text-transform: uppercase; }
+  .after .tag { background: var(--yellow); color: var(--ink); }
+  .cap { font-size: 16px; color: var(--muted); margin-top: 6px; }
+  .body { display: grid; grid-template-columns: 1fr 220px; gap: 30px; margin-top: 18px; }
+  .body p { margin-bottom: 8px; }
+  .result { display: inline-block; background: var(--yellow); font-weight: 700; padding: 3px 10px; margin-top: 4px; }
+  .side { border-left: 2px solid var(--ink); padding-left: 16px; align-self: start; }
+  .side .yr { color: var(--yellow); font-weight: 600; font-size: 28px; line-height: 1; }
+  .side .tags { margin-top: 8px; font-size: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); line-height: 1.5; }
+  .side a { display: inline-block; margin-top: 12px; font-weight: 700; font-size: 16px; }
+  .more { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 18px; }
+
+  /* contact */
+  footer { margin-top: 50px; background: var(--yellow); }
+  footer .wrap { padding-top: 34px; padding-bottom: 38px; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
+  footer h2 { font-weight: 800; font-size: 30px; }
+  footer p { font-weight: 500; max-width: 560px; margin-top: 6px; }
+  .links { border-left: 3px solid var(--ink); padding-left: 20px; font-weight: 700; line-height: 1.9; }
+
+  @media (max-width: 760px) {
+    body { font-size: 18px; }
+    .sub { margin-left: 0; text-align: left; width: 100%; font-size: 12px; }
+    .intro, .body, footer .wrap { grid-template-columns: 1fr; gap: 22px; }
+    .pair { grid-template-columns: 1fr; }
+    .pair .arrow { display: none; }
+    .side { border-left: 0; border-top: 2px solid var(--ink); padding: 10px 0 0; }
+    .links { border-left: 0; padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="block"></div>
+      <div class="name">Zach Lamplugh</div>
+      <div class="sub">CREATIVE TECHNOLOGIST<br>PIPELINE TECHNICAL DIRECTOR</div>
+    </div>
+    <nav>
+      <a href="#ai">AI pipelines</a>
+      <a href="#vfx">VFX pipelines</a>
+      <a href="#creative">AI creative</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="intro">
+    <div>
+      <p class="lead">I'm an editor who learned to code. Now I build <mark>AI pipelines</mark> and production tools that people actually use.</p>
+      <p class="more">10+ years editing animation, live action and branded content, from Star Trek: Lower Decks to Adult Swim to a feature I wrote, directed and edited for Showtime. Each project below shows the problem, what I built, and what came out of it.</p>
+    </div>
+    <div class="proof">
+      <div><b>1,700+ shots</b><span>through my pipeline on a hybrid CG feature</span></div>
+      <div><b>$0.04 per image</b><span>to relight a dated hotel photo</span></div>
+      <div><b>Annie nominated</b><span>Star Trek: Lower Decks, as editor</span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ AI PIPELINES -->
+  <section class="group" id="ai">
+    <h2 class="gtitle">2026 · <span>AI pipelines</span></h2>
+
+    <article class="case">
+      <h3>Hotel Photo Relighting Pipeline</h3>
+      <div class="for">Prototype for a global hotel group</div>
+      <div class="pair">
+        <div class="shot"><img src="assets/relight_before.jpg" alt="Dated, warm hotel boardroom photo" loading="lazy"><span class="tag">Before</span></div>
+        <div class="arrow">›</div>
+        <div class="shot after"><img src="assets/relight_after.jpg" alt="The same room relit in modern daylight" loading="lazy"><span class="tag">After</span></div>
+      </div>
+      <div class="cap">Dated, warm property photo → modern daylight, generated in one batch pass</div>
+      <div class="body">
+        <div>
+          <p><b>Problem:</b> Thousands of property photos per hotel look dated, and nobody can reshoot a whole portfolio.</p>
+          <p><b>Built:</b> A Python batch pipeline that relights each photo in several approved styles, color-grades the results, and leaves a spread for an artist to pick from.</p>
+          <p><b>Why it matters:</b> A professional reshoot runs $3,000–$10,000+ per property. Relighting a property's whole library in four looks costs about $320. Across a chain of about 7,000 hotels, that's tens of millions of dollars.</p>
+          <div class="result">≈ $0.04 per image · 2–3 usable looks out of 4</div>
+        </div>
+        <div class="side"><div class="yr">2026</div><div class="tags">Python · batch API · color grading</div>
+          <a href="https://github.com/secretgrampuh/hotel-photo-relighting">Full write-up →</a></div>
+      </div>
+      <div class="more">
+        <div class="shot"><img src="assets/relight_restaurant_before.jpg" alt="Restaurant before" loading="lazy"><span class="tag">Before</span></div>
+        <div class="shot after"><img src="assets/relight_restaurant_after.jpg" alt="Restaurant after" loading="lazy"><span class="tag">After</span></div>
+        <div class="shot"><img src="assets/relight_lobby_before.jpg" alt="Lobby before" loading="lazy"><span class="tag">Before</span></div>
+        <div class="shot after"><img src="assets/relight_lobby_after.jpg" alt="Lobby after" loading="lazy"><span class="tag">After</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>Market-Compliance Image Editing</h3>
+      <div class="for">Prototype for a global hotel group</div>
+      <div class="pair">
+        <div class="shot"><img src="assets/compliance2_before.jpg" alt="Hotel photo with a beer on the table" loading="lazy"><span class="tag">Before</span></div>
+        <div class="arrow">›</div>
+        <div class="shot after"><img src="assets/compliance2_after.jpg" alt="The beer swapped for a soda" loading="lazy"><span class="tag">After</span></div>
+      </div>
+      <div class="cap">Beer flagged automatically and swapped for a soda; nothing else moves</div>
+      <div class="body">
+        <div>
+          <p><b>Problem:</b> Some markets can't show alcohol or pork, and no one wants to hand-flag a photo library.</p>
+          <p><b>Built:</b> Claude vision detects the item and writes a custom edit for each photo, OpenAI and Gemini render it side by side, and a second AI pass checks the result before a human reviews.</p>
+          <div class="result">Same command runs 20 photos or 2,000</div>
+        </div>
+        <div class="side"><div class="yr">2026</div><div class="tags">Claude vision · GPT Image · Gemini · Python</div>
+          <a href="https://github.com/secretgrampuh/market-compliance-image-editing">Full write-up →</a></div>
+      </div>
+      <div class="more">
+        <div class="shot"><img src="assets/compliance_before.jpg" alt="Another compliance example, before" loading="lazy"><span class="tag">Before</span></div>
+        <div class="shot after"><img src="assets/compliance_after.jpg" alt="Another compliance example, after" loading="lazy"><span class="tag">After</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============================================================ VFX PIPELINES -->
+  <section class="group" id="vfx">
+    <h2 class="gtitle">2022–2024 · <span>VFX &amp; editorial pipelines</span></h2>
+
+    <article class="case">
+      <h3>VFX Editorial Pipeline, 1,700+ Shot Feature</h3>
+      <div class="for">Trioscope · hybrid live-action / CG / rotoscoped animation</div>
+      <div class="pair">
+        <div class="shot"><img src="assets/trioscope_before.jpg" alt="Live-action plate with pipeline burn-ins" loading="lazy"><span class="tag">Plate</span></div>
+        <div class="arrow">›</div>
+        <div class="shot after"><img src="assets/trioscope_after.jpg" alt="Final rotoscoped look" loading="lazy"><span class="tag">Final look</span></div>
+      </div>
+      <div class="cap">Live-action plate with pipeline burn-ins → final rotoscoped look (synthetic demo frames)</div>
+      <div class="body">
+        <div>
+          <p><b>Problem:</b> Two vendors and artists on four continents had to send thousands of shots back and forth without anything getting lost or mislabeled.</p>
+          <p><b>Built:</b> Eleven Python tools: shot folders and Nuke comps built from the edit, a vendor round-trip that synced two ShotGrid sites, and a timeline that rebuilt itself for the editor.</p>
+          <div class="result">1,700+ shots · 2 vendors · 4 continents</div>
+        </div>
+        <div class="side"><div class="yr">2022–2024</div><div class="tags">Python · ShotGrid · Nuke · Premiere XML · Conductor</div>
+          <a href="https://github.com/secretgrampuh/vfx-editorial-pipeline">Code on GitHub →</a></div>
+      </div>
+      <div class="more">
+        <div class="shot"><img src="assets/trioscope_folders1.jpg" alt="Auto-built shot folder tree" loading="lazy"><span class="tag">Auto-built shot tree</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>Yule Log 2 Delivery Pipeline + VFX Manual</h3>
+      <div class="for">Adult Swim · live-action feature</div>
+      <div class="pair">
+        <div class="shot"><img src="assets/yl2_merged.jpg" alt="Plate with shot code and timecode burn-ins" loading="lazy"><span class="tag">Plate + burn-ins</span></div>
+        <div class="arrow">›</div>
+        <div class="shot after"><img src="assets/yl2_final.jpg" alt="The finished shot" loading="lazy"><span class="tag">Final shot</span></div>
+      </div>
+      <div class="cap">Plate with shot code and timecode burn-ins → the finished shot (synthetic demo)</div>
+      <div class="body">
+        <div>
+          <p><b>Problem:</b> On the first Yule Log, VFX ran over email and text, shots were exported by hand, and the show went over budget.</p>
+          <p><b>Built:</b> Five Python tools that build shot folders from the edit, route vendor deliveries into the shot tree and publish to ShotGrid, plus a VFX onboarding manual the whole team worked from.</p>
+          <div class="result">~250 VFX shots · 90-minute feature · one shared system</div>
+        </div>
+        <div class="side"><div class="yr">2024</div><div class="tags">Python · ShotGrid · DaVinci Resolve · EDL/XML</div>
+          <a href="https://github.com/secretgrampuh/yl2-delivery-pipeline">Code on GitHub →</a></div>
+      </div>
+      <div class="more">
+        <div class="shot"><img src="assets/yl2_folders.jpg" alt="Auto-built shot tree" loading="lazy"><span class="tag">Auto-built shot tree</span></div>
+        <div class="shot"><img src="assets/yl2_layer01.jpg" alt="Plate" loading="lazy"><span class="tag">Plate</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============================================================ AI CREATIVE -->
+  <section class="group" id="creative">
+    <h2 class="gtitle">2025 · <span>AI creative</span></h2>
+
+    <article class="case">
+      <h3>All-AI Spot for Mellow Mushroom</h3>
+      <div class="for">Dagger · Mellow Mushroom</div>
+      <div class="solo"><div class="shot after"><img src="assets/mellow_final.jpg" alt="Frame from the 8-bit Taco Nirvana spot" loading="lazy"><span class="tag">Final spot</span></div></div>
+      <div class="cap">The 8-bit "Taco Nirvana" spot the client bought and ran</div>
+      <div class="body">
+        <div>
+          <p><b>Problem:</b> The client wanted fresh, eye-catching spots without a traditional shoot.</p>
+          <p><b>Built:</b> Several fully AI-generated ad concepts made with Midjourney, Runway and Kling, carried from first concept through to a finished spot.</p>
+          <div class="result">Bought and distributed by the client</div>
+        </div>
+        <div class="side"><div class="yr">2025</div><div class="tags">Midjourney · Runway · Kling · editorial</div></div>
+      </div>
+      <div class="more">
+        <div class="shot"><img src="assets/mellow_before.jpg" alt="Mellow Mushroom concept frame" loading="lazy"></div>
+        <div class="shot"><img src="assets/mellow_after.jpg" alt="Mellow Mushroom concept frame" loading="lazy"></div>
+        <div class="shot"><img src="assets/mellow_character.jpg" alt="Mellow Mushroom character" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>"Mandela Effect" Mascot Spot for Arby's</h3>
+      <div class="for">Dagger · disruptor ad concept for Arby's</div>
+      <div class="pair">
+        <div class="shot"><img src="assets/arbys_real.jpg" alt="Real 1970s Arby's commercial footage" loading="lazy"><span class="tag">Real 1970s</span></div>
+        <div class="arrow">›</div>
+        <div class="shot after"><img src="assets/arbys_ai.jpg" alt="The AI-generated mascot" loading="lazy"><span class="tag">AI shot</span></div>
+      </div>
+      <div class="cap">Real 1970s footage → the AI mascot nobody remembers, because he never existed</div>
+      <div class="body">
+        <div>
+          <p><b>Problem:</b> Make a fast-food ad people talk about without looking like every other AI ad.</p>
+          <p><b>Built:</b> A spot cut from real 1970s Arby's commercials with exactly one AI shot, a creepy mascot in the vein of early Ronald McDonald who never existed.</p>
+          <div class="result">One AI shot hidden in a real 1970s ad</div>
+        </div>
+        <div class="side"><div class="yr">2025</div><div class="tags">AI video · archival edit · concepting</div></div>
+      </div>
+      <div class="more">
+        <div class="shot"><img src="assets/arbys.jpg" alt="Arby's spot frame" loading="lazy"></div>
+        <div class="shot"><img src="assets/arbys_end.jpg" alt="Final frame" loading="lazy"><span class="tag">Final frame</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>AI-Cast Pitch Video for a Regional Bank</h3>
+      <div class="for">New-business pitch for Regions Bank</div>
+      <div class="pair">
+        <div class="shot"><img src="assets/regions_medium.jpg" alt="Synthetic stand-in character, medium shot" loading="lazy"><span class="tag">Medium</span></div>
+        <div class="arrow">›</div>
+        <div class="shot after"><img src="assets/regions_wide.jpg" alt="Synthetic stand-in characters, wide shot" loading="lazy"><span class="tag">Wide</span></div>
+      </div>
+      <div class="cap">Synthetic stand-ins; the real pitch cast the client's own marketing team</div>
+      <div class="body">
+        <div>
+          <p><b>Problem:</b> Win a multi-round pitch against other agencies with something the client would remember.</p>
+          <p><b>Built:</b> Cloned the client team's voices from our recorded kickoff call (recorded so the creative team had the brief), cast their CMO as an AI character in round one, then made a character for every client-side attendee in rounds two and three. The client side grew each meeting, so the cast did too.</p>
+          <div class="result">The client loved it; the cast grew every round</div>
+        </div>
+        <div class="side"><div class="yr">2025</div><div class="tags">ElevenLabs · RVC · AI video · editorial</div></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>Disruptor Brand Launch, Blister Ridge Vodka</h3>
+      <div class="for">Original brand launch</div>
+      <div class="solo"><div class="shot after"><img src="assets/vodka_can.jpg" alt="Blister Ridge Vodka spot frame" loading="lazy"><span class="tag">AI + stock</span></div></div>
+      <div class="cap">One of several spots for a brand that didn't exist before the campaign</div>
+      <div class="body">
+        <div>
+          <p><b>Problem:</b> Launch a brand-new vodka brand built to go viral, with almost no production budget.</p>
+          <p><b>Built:</b> A full disruptor campaign made from AI video, stock footage and AI voice. I wrote every script.</p>
+          <div class="result">Full campaign pitched on a near-zero budget</div>
+        </div>
+        <div class="side"><div class="yr">2025</div><div class="tags">AI video · stock · AI voice · scriptwriting</div></div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Let's build something.</h2>
+      <p>I'm looking for creative technologist, pipeline and editorial roles, in Atlanta or remote.</p>
+    </div>
+    <div class="links">
+      <a href="mailto:lamplughvideo@gmail.com">lamplughvideo@gmail.com</a><br>
+      <a href="https://www.linkedin.com/in/zachary-l-7b384833/">LinkedIn</a><br>
+      <a href="https://github.com/secretgrampuh">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
